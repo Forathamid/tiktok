@@ -1,0 +1,23 @@
+<html>
+<head>
+<script>
+var urls = [
+    "https://tikfinity.zerody.one/widget/goal?cid=48732&metric=likes",
+    "https://tikfinity.zerody.one/widget/goal?cid=48732&metric=follows"
+];
+var currentIndex = 0;
+
+function changeURL() {
+    document.getElementById("myframe").src = urls[currentIndex];
+    currentIndex = (currentIndex + 1) % urls.length;
+}
+
+window.onload = function() {
+    setInterval(changeURL, 20000); // Cambia cada 20 segundos (20000 ms)
+}
+</script>
+</head>
+<body>
+    <iframe id="myframe" src="https://tikfinity.zerody.one/widget/goal?cid=48732&metric=likes" frameborder="0" width="100%" height="100%"></iframe>
+</body>
+</html>
